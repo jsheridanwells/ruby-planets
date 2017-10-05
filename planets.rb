@@ -1,3 +1,4 @@
+# Planets
 planet_list = ["Mercury", "Mars"]
 last_two = ['Uranus', 'Neptune']
 
@@ -20,5 +21,31 @@ rocky_planets = planet_list.slice(0, 4)
 # Being good amateur astronomers, we know that Pluto is now a dwarf planet, so use the pop operation to remove it from the end of planet_list.
 planet_list.pop()
 
+
+#Spacecraft
+spacecraft = [
+	["Cassini", "Venus", "Earth", "Jupiter", "Saturn"],
+	["Voyager 1", "Jupiter", "Saturn" ],
+	["Voyager 2", "Jupiter", "Saturn", "Uranus", "Neptune"]
+]
+
+# print planet_list and rocky_planets
 puts planet_list
 puts rocky_planets
+
+#print list of planets with spacecraft that have visited
+
+#loop over each planet
+planet_list.each do |planet|
+	satellites = ''
+	#loop over each array in spacecraft
+	spacecraft.each do |array|
+		for item in array
+			#if the planet if found in the array
+			if item == planet
+				# print the name of the planet and the satellite
+				puts planet + ": " + array[0]
+			end
+		end
+	end
+end
